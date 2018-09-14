@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/runINITests.dir/runAllTests.cpp.o CMakeFiles/runINITests.dir/INITest.cpp.o  -o runINITests lib/googletest/libgtestd.a lib/googletest/libgtest_maind.a ../libcore.a lib/googletest/libgtestd.a -pthread 
