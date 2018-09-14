@@ -27,9 +27,10 @@ INI::INI(const string &n, const string &p){
                     currentSection.pop_back();
 
                     currentSection.erase(currentSection.begin());
-                    if(control==1)
-                    addComment(currentComment,currentSection);
+
                     addSection(currentSection);
+                    if(control==1)
+                        addComment(currentComment,currentSection);
 
                     break;
                 }
@@ -50,10 +51,11 @@ INI::INI(const string &n, const string &p){
 
                     string parametro(stringa, 0, pos );
                     string valore(stringa, pos + 1, string::npos);
-                    if(control==1)
-                    addComment(currentComment,parametro,currentSection);
+
                     if (stringa.length() > 0)
                         addParam(parametro, valore, currentSection);
+                    if(control==1)
+                        addComment(currentComment,parametro,currentSection);
                     break;
                 }
             }
@@ -81,12 +83,14 @@ INI_errors INI::addParam(const string &parameter, const string &value, const str
 
 INI_errors INI::addSection(const string &section) {
 
-    auto control = ini[section].insert(make_pair("",""));     // Non potendo inserire soltanto parte della mappa ho optato per aggiungere una coppia "vuota"
 
-    if(!control.second)
-        return duplicate;
-    else
+    auto control = ini.find(section);
+    if(control == ini.end()) {
+        ini[section].insert(make_pair("",""));     // Non potendo inserire soltanto parte della mappa ho optato per aggiungere una coppia "vuota"
         return no_error;
+    }else
+        return duplicate;
+
 
 }
 
@@ -122,15 +126,48 @@ INI_errors INI::delSection(const string &section) {
 }
 
 INI_errors INI::addComment(const string &comment, const string &parameter, const string &section) {
-    string str(parameter);
-    str.pop_back();
-    addParam(str+"$$$$",";"+comment, section);
+    try {
+        INI_errors result = error;
+        auto pos = ini.at(section).find(parameter);
+        if(pos != ini.at(section).end()) {
+            string str(parameter);
+            str.pop_back();
+            result = addParam(str + "$$$$", ";" + comment, section);
+        } else
+            result = not_exist;
+
+        return result;
+    }
+    catch(out_of_range& err)
+    {
+        return not_exist;
+    }
+    catch(...)
+    {
+        return error;
+    }
 }
 
 INI_errors INI::addComment(const string &comment, const string &section) {
-    string str(section);
-    str.pop_back();
-    ini[str+"$$$$"].insert(make_pair("$$$$",";"+comment));
+    try {
+        ini.at(section);
+        string str(section);
+        str.pop_back();
+        auto control = ini[str + "$$$$"].insert(make_pair("$$$$", ";" + comment));
+        if (control.second)
+            return no_error;
+        else
+            return duplicate;
+    }
+    catch(out_of_range& err)
+    {
+        return not_exist;
+    }
+    catch(...)
+    {
+        return error;
+    }
+
 
 }
 
@@ -218,7 +255,7 @@ INI_errors INI::renameSection(const string &section, const string &newSection) {
     }
 }
 
-INI_errors INI::changeParam(const string &parameter, string &value, const string &section) {
+INI_errors INI::changeParam(const string &parameter,const string &value, const string &section) {
     try {
         auto pos = ini.at(section).find(parameter);
         if(pos != ini.at(section).end()) {
@@ -226,7 +263,7 @@ INI_errors INI::changeParam(const string &parameter, string &value, const string
             return no_error;
         }
         else
-            return duplicate;
+            return not_exist;
 
     }
     catch(out_of_range& err)
@@ -259,7 +296,7 @@ void INI::printAll() {
 }
 
 
-void INI::printOnScreen() {
+void INI::printOnScreen() const {
 
     for (auto &it : ini) {
         if(it.first.find("$$$$") == string::npos)
@@ -301,15 +338,31 @@ INI_errors INI::getParam(string& value, const string &parameter, const string &s
 
 INI_errors INI::getComment(string &comment, const string &section, const string &parameter) const {
     try {
-        string str(parameter);
-        str.pop_back();
-        auto pos = ini.at(section).find(str+"$$$$");
-        if(pos != ini.at(section).end()) {
-            comment = pos->second;
-            return no_error;
-        }
-        else
-            return not_exist;
+        string str;
+        if(parameter == ""){
+            str = section;
+            str.pop_back();
+            auto pos = ini.at(str+"$$$$").find("$$$$");
+            if(pos == ini.at(str+"$$$$").end())
+                return not_exist;
+            else{
+                comment = pos->second;
+                return no_error;
+            }
+
+        }else
+            {
+                str = parameter;
+                str.pop_back();
+                auto pos = ini.at(section).find(str+"$$$$");
+                if(pos != ini.at(section).end()) {
+                    comment = pos->second;
+                    return no_error;
+                }
+                else
+                    return not_exist;
+
+            }
 
     }
     catch(const out_of_range& err) {

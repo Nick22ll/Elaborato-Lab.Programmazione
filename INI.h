@@ -39,10 +39,10 @@ public:
     INI_errors renameParam(const string &parameter,const string &newParam,const string &section);
     INI_errors renameSection(const string &section,const string &newSection);
 
-    INI_errors changeParam(const string &parameter, string &value ,const string &section);
+    INI_errors changeParam(const string &parameter,const string &value ,const string &section);
 
-    void printAll();
-    void printOnScreen();
+    void printAll() ;
+    void printOnScreen() const;
 
 private:
 
