@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/runGameCharacterTests.dir/runAllTests.cpp.o CMakeFiles/runGameCharacterTests.dir/INITest.cpp.o  -o runGameCharacterTests lib/googletest/libgtestd.a lib/googletest/libgtest_maind.a -lcore lib/googletest/libgtestd.a -pthread 
