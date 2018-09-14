@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/main.cpp.dir/main.cpp.o CMakeFiles/main.cpp.dir/INITest.cpp.o CMakeFiles/main.cpp.dir/INI.cpp.o  -o main.cpp test/googletest/libgtestd.a test/googletest/libgtest_maind.a -lcore test/googletest/libgtestd.a -pthread 

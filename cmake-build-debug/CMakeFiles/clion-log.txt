@@ -1,0 +1,4 @@
+/home/niccolo/Scaricati/clion-2018.1.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /home/niccolo/CLionProjects/Uni_INI
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/niccolo/CLionProjects/Uni_INI/cmake-build-debug

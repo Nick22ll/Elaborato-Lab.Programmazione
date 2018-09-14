@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/Uni_INI.dir/main.cpp.o CMakeFiles/Uni_INI.dir/INI.cpp.o  -o Uni_INI 
