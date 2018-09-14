@@ -14,3 +14,5 @@ Susine = 15
 BasePizza = 40
 ;Novità offerta
 LinguinealloScoglio = 50
+[fuck u]
+Porcalamadonna = 99999

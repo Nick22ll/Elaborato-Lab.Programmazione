@@ -9,7 +9,7 @@
 
 TEST(INITest, ParamTest) {
 
-    INI file("/home/niccolo/CLionProjects/Uni_INI/resources/Testo.txt");
+    INI file("/home/niccolo/CLionProjects/Uni_INI/Testo.txt");
     //Test addParam
     EXPECT_EQ(file.addParam("Arance","60","Frutta e Verdura"),no_error);
     EXPECT_EQ(file.addParam("Arance","60","Frutta e Verdura"),duplicate);
@@ -43,7 +43,7 @@ TEST(INITest, ParamTest) {
 
 TEST(INITest, SectionTest)
 {
-    INI file("/home/niccolo/CLionProjects/Uni_INI/resources/Testo.txt");
+    INI file("/home/niccolo/CLionProjects/Uni_INI/Testo.txt");
 
     //Test addSection
     EXPECT_EQ(file.addSection("Carni"),no_error);
@@ -67,7 +67,7 @@ TEST(INITest, SectionTest)
 
 TEST(INITest, CommentTest) {
 
-    INI file("/home/niccolo/CLionProjects/Uni_INI/resources/Testo.txt");
+    INI file("/home/niccolo/CLionProjects/Uni_INI/Testo.txt");
 
     //Test addComment (Parameter)
     EXPECT_EQ(file.addComment("Fresco di giornata","Pane","Farinati"),no_error);

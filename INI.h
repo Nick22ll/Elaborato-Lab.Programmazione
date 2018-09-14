@@ -18,7 +18,7 @@ enum INI_errors{not_exist, duplicate, no_error, error};
 
 class INI {
 public:
-    explicit INI(const string &name,const string &path = "");
+    explicit INI(const string &name);
 
     ~INI(){
         printAll();
@@ -47,7 +47,7 @@ public:
 private:
 
     map< string , map< string, string>> ini;
-    string name, path;
+    string name;
     fstream file;
 };
 

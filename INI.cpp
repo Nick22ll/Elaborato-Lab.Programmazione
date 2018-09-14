@@ -4,15 +4,15 @@
 
 #include "INI.h"
 
-INI::INI(const string &n, const string &p){
+INI::INI(const string &n){
 
     name=n;
-    path=p;
+
     string currentSection, currentComment;
     int control=5;
     char vetChar[1000];
 
-    file.open(path+"/"+name, ios::in);
+    file.open(name, ios::in);
 
     if(file.is_open())
     {
@@ -274,7 +274,11 @@ INI_errors INI::changeParam(const string &parameter,const string &value, const s
 
 void INI::printAll() {
 
-    file.open(path+"/"+name, ios::out);
+    file.open(name, ios::out | ios::trunc);
+
+    if(file.is_open())
+        cout<<"ok"<<endl;
+
 
     for (auto &it : ini) {
         if(it.first.find("$$$$") == string::npos)
