@@ -1,3 +1,0 @@
-[Farinati]
-[Frutta e Verdura]
-Rosticciana = 60
