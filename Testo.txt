@@ -1,18 +1,3 @@
-;Necessita di nuovi scaffali
 [Farinati]
-Fettebiscottate = 35
-Pane = 50
 [Frutta e Verdura]
-Carote = 20
-;vicino a scadenza
-Insalata = 100
-Mele = 50
-Pesche = 75
-Susine = 15
-[Surgelati]
-4SaltiInPadella = 20
-BasePizza = 40
-;Novità offerta
-LinguinealloScoglio = 50
-[fuck u]
-Porcalamadonna = 99999
+Rosticciana = 60

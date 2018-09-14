@@ -5,11 +5,11 @@
 #include<gtest/gtest.h>
 #include"../INI.h"
 
-
+//Il file su cui si basa il test si trova in Uni_INI/cmake-build-debug/test/Testo.ini
 
 TEST(INITest, ParamTest) {
 
-    INI file("/home/niccolo/CLionProjects/Uni_INI/Testo.txt");
+    INI file("Testo.ini");
     //Test addParam
     EXPECT_EQ(file.addParam("Arance","60","Frutta e Verdura"),no_error);
     EXPECT_EQ(file.addParam("Arance","60","Frutta e Verdura"),duplicate);
@@ -43,7 +43,7 @@ TEST(INITest, ParamTest) {
 
 TEST(INITest, SectionTest)
 {
-    INI file("/home/niccolo/CLionProjects/Uni_INI/Testo.txt");
+    INI file("Testo.ini");
 
     //Test addSection
     EXPECT_EQ(file.addSection("Carni"),no_error);
@@ -67,7 +67,7 @@ TEST(INITest, SectionTest)
 
 TEST(INITest, CommentTest) {
 
-    INI file("/home/niccolo/CLionProjects/Uni_INI/Testo.txt");
+    INI file("Testo.ini");
 
     //Test addComment (Parameter)
     EXPECT_EQ(file.addComment("Fresco di giornata","Pane","Farinati"),no_error);

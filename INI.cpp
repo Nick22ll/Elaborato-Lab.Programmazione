@@ -276,10 +276,6 @@ void INI::printAll() {
 
     file.open(name, ios::out | ios::trunc);
 
-    if(file.is_open())
-        cout<<"ok"<<endl;
-
-
     for (auto &it : ini) {
         if(it.first.find("$$$$") == string::npos)
             file<<"["<< it.first<<"]"<<endl;  // Stampo nome della sezione

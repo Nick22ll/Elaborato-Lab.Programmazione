@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
 
-    INI file("/home/niccolo/CLionProjects/Uni_INI/Testo.txt"); //Il file Testo.txt simula un inventario di un piccolo minimarket
+    INI file("Testo.ini"); //Il file Testo.ini simula un inventario di un piccolo minimarket
 
     //Aggiungiamo la sezione [Carni]
     file.addSection("Carni");
