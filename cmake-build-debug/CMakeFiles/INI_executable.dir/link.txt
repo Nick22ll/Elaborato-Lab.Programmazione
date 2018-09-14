@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/INI_executable.dir/main.cpp.o  -o INI_executable libcore.a 

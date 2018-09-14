@@ -1,0 +1,11 @@
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/CMakeFiles/core.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/CMakeFiles/INI_executable.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/test/CMakeFiles/edit_cache.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/test/CMakeFiles/runINITests.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/test/lib/googletest/CMakeFiles/rebuild_cache.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/test/lib/googletest/CMakeFiles/edit_cache.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/test/lib/googletest/CMakeFiles/gtest_main.dir
+/home/niccolo/CLionProjects/Uni_INI/cmake-build-debug/test/lib/googletest/CMakeFiles/gtest.dir

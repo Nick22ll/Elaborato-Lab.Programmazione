@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/niccolo/CLionProjects/Uni_INI/INI.cpp
+INI.h
+/home/niccolo/CLionProjects/Uni_INI/INI.h
+
+/home/niccolo/CLionProjects/Uni_INI/INI.h
+iostream
+-
+cstring
+-
+map
+-
+fstream
+-
+
+/home/niccolo/CLionProjects/Uni_INI/main.cpp
+iostream
+-
+string.h
+-
+INI.h
+/home/niccolo/CLionProjects/Uni_INI/INI.h
+curses.h
+-
+
