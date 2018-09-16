@@ -8,7 +8,6 @@
 //Il file su cui si basa il test si trova in Uni_INI/cmake-build-debug/test/Testo.ini
 
 TEST(INITest, ParamTest) {
-
     INI file("Testo.ini");
     //Test addParam
     EXPECT_EQ(file.addParam("Arance","60","Frutta e Verdura"),no_error);
@@ -38,7 +37,6 @@ TEST(INITest, ParamTest) {
     EXPECT_EQ(file.delParam("Tarocco","Surgelati"),not_exist);
     EXPECT_EQ(file.delParam("Cavolo","Frutta e Verdura"),not_exist);
     EXPECT_EQ(file.delParam("Tarocco","Frutta e Verdura"),no_error);
-
 }
 
 TEST(INITest, SectionTest)
@@ -61,12 +59,10 @@ TEST(INITest, SectionTest)
     //Test delSection
     EXPECT_EQ(file.delSection("Pesce"),not_exist);
     EXPECT_EQ(file.delSection("Macelleria"),no_error);
-
 }
 
 
 TEST(INITest, CommentTest) {
-
     INI file("Testo.ini");
 
     //Test addComment (Parameter)
@@ -100,7 +96,4 @@ TEST(INITest, CommentTest) {
     EXPECT_EQ(file.delComment("Faati","Pane"),not_exist);
     EXPECT_EQ(file.delComment("Farinati","Pe"),not_exist);
     EXPECT_EQ(file.delComment("Farinati","Pane"),no_error);
-
-
-
 }
