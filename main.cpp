@@ -15,7 +15,6 @@ int main()
 
     //Aggiungiamo quindi qualche merce
     file.addParam("Bistecca","20","Carni");
-
     if(file.addParam("Rosticciana","35","Cani") == not_exist)   // Se si commette qualche errore verrà restituito un valore INI_errors che aiuterà a capire l'errore(vale per tutti i metodi in INI.h
             cout<<"Sembra che la sezione non esista!"<<endl;
 
@@ -30,7 +29,5 @@ int main()
 
     //o  eliminare ciò che abbiamo aggiunto...
     file.delSection("Macelleria");
-
     return 0;
-
 }
