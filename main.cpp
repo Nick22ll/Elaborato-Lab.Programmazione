@@ -30,7 +30,6 @@ int main()
 
     //o  eliminare ciò che abbiamo aggiunto...
     file.delSection("Macelleria");
-    file.printOnScreen();
 
     return 0;
 
